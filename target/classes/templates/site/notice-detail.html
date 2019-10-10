@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="https://static.nowcoder.com/images/logo_87_87.png"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
-	<link rel="stylesheet" href="../css/global.css" />
-	<link rel="stylesheet" href="../css/letter.css" />
-	<title>牛客网-通知详情</title>
+	<link rel="stylesheet" th:href="@{/css/global.css}" />
+	<link rel="stylesheet" th:href="@{/css/letter.css}" />
+	<title>通知详情</title>
 </head>
 <body>
 	<div class="nk-container">
@@ -66,100 +66,62 @@
 						<h6><b class="square"></b> 系统通知</h6>
 					</div>
 					<div class="col-4 text-right">
-						<button type="button" class="btn btn-secondary btn-sm" onclick="location.href='notice.html';">返回</button>
+						<button type="button" class="btn btn-secondary btn-sm" onclick="back();">返回</button>
 					</div>
 				</div>
-				
+
 				<!-- 通知列表 -->
 				<ul class="list-unstyled mt-4">
-					<li class="media pb-3 pt-3 mb-2">
-						<img src="http://static.nowcoder.com/images/head/notify.png" class="mr-4 rounded-circle user-header" alt="系统图标">
+					<li class="media pb-3 pt-3 mb-2" th:each="map:${notices}">
+						<img th:src="${map.fromUser.headerUrl}" class="mr-4 rounded-circle user-header" alt="系统图标">
 						<div class="toast show d-lg-block" role="alert" aria-live="assertive" aria-atomic="true">
 							<div class="toast-header">
-								<strong class="mr-auto">落基山脉下的闲人</strong>
-								<small>2019-04-25 15:49:32</small>
+								<strong class="mr-auto" th:utext="${map.fromUser.username}">落基山脉下的闲人</strong>
+								<small th:text="${#dates.format(map.notice.createTime,'yyyy-MM-dd HH:mm:ss')}">2019-04-25 15:49:32</small>
 								<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
 							<div class="toast-body">
-								<span>用户 <i>nowcoder</i> 评论了你的<b>帖子</b>, <a class="text-primary" href="#">点击查看</a> !</span>
+								<span th:if="${topic.equals('comment')}">
+									用户
+									<i th:utext="${map.user.username}">nowcoder</i>
+									评论了你的<b th:text="${map.entityType==1?'帖子':'回复'}">帖子</b>,
+									<a class="text-primary" th:href="@{|/discuss/detail/${map.postId}|}">点击查看</a> !
+								</span>
+								<span th:if="${topic.equals('like')}">
+									用户
+									<i th:utext="${map.user.username}">nowcoder</i>
+									点赞了你的<b th:text="${map.entityType==1?'帖子':'回复'}">帖子</b>,
+									<a class="text-primary" th:href="@{|/discuss/detail/${map.postId}|}">点击查看</a> !
+								</span>
+								<span th:if="${topic.equals('follow')}">
+									用户
+									<i th:utext="${map.user.username}">nowcoder</i>
+									关注了你,
+									<a class="text-primary" th:href="@{|/user/profile/${map.user.id}|}">点击查看</a> !
+								</span>
 							</div>
 						</div>
 					</li>
-					<li class="media pb-3 pt-3 mb-2">
-						<img src="http://static.nowcoder.com/images/head/notify.png" class="mr-4 rounded-circle user-header" alt="系统图标">
-						<div class="toast show d-lg-block" role="alert" aria-live="assertive" aria-atomic="true">
-							<div class="toast-header">
-								<strong class="mr-auto">nowcoder</strong>
-								<small>2019-04-25 15:49:32</small>
-								<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="toast-body">
-								<span>用户 <i>nowcoder</i> 评论了你的<b>帖子</b>, <a class="text-primary" href="#">点击查看</a> !</span>
-							</div>
-						</div>
-					</li>	
-					<li class="media pb-3 pt-3 mb-2">
-						<img src="http://static.nowcoder.com/images/head/notify.png" class="mr-4 rounded-circle user-header" alt="系统图标">
-						<div class="toast show d-lg-block" role="alert" aria-live="assertive" aria-atomic="true">
-							<div class="toast-header">
-								<strong class="mr-auto">落基山脉下的闲人</strong>
-								<small>2019-04-25 15:49:32</small>
-								<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="toast-body">
-								<span>用户 <i>nowcoder</i> 评论了你的<b>帖子</b>, <a class="text-primary" href="#">点击查看</a> !</span>
-							</div>
-						</div>
-					</li>
-					<li class="media pb-3 pt-3 mb-2">
-						<img src="http://static.nowcoder.com/images/head/notify.png" class="mr-4 rounded-circle user-header" alt="系统图标">
-						<div class="toast show d-lg-block" role="alert" aria-live="assertive" aria-atomic="true">
-							<div class="toast-header">
-								<strong class="mr-auto">nowcoder</strong>
-								<small>2019-04-25 15:49:32</small>
-								<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="toast-body">
-								<span>用户 <i>nowcoder</i> 评论了你的<b>帖子</b>, <a class="text-primary" href="#">点击查看</a> !</span>
-							</div>
-						</div>
-					</li>	
-					<li class="media pb-3 pt-3 mb-2">
-						<img src="http://static.nowcoder.com/images/head/notify.png" class="mr-4 rounded-circle user-header" alt="系统图标">
-						<div class="toast show d-lg-block" role="alert" aria-live="assertive" aria-atomic="true">
-							<div class="toast-header">
-								<strong class="mr-auto">落基山脉下的闲人</strong>
-								<small>2019-04-25 15:49:32</small>
-								<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="toast-body">
-								<span>用户 <i>nowcoder</i> 评论了你的<b>帖子</b>, <a class="text-primary" href="#">点击查看</a> !</span>
-							</div>
-						</div>
-					</li>																																																										
 				</ul>
 				<!-- 分页 -->
-				<nav class="mt-5">
+				<nav class="mt-5" th:if="${page.rows>0}" th:fragment="pagination">
 					<ul class="pagination justify-content-center">
-						<li class="page-item"><a class="page-link" href="#">首页</a></li>
-						<li class="page-item disabled"><a class="page-link" href="#">上一页</a></li>
-						<li class="page-item active"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">4</a></li>
-						<li class="page-item"><a class="page-link" href="#">5</a></li>
-						<li class="page-item"><a class="page-link" href="#">下一页</a></li>
-						<li class="page-item"><a class="page-link" href="#">末页</a></li>
+						<li class="page-item">
+							<a class="page-link" th:href="@{${page.path}(current=1)}">首页</a>
+						</li>
+						<li th:class="|page-item ${page.current==1?'disabled':''}|">
+							<a class="page-link" th:href="@{${page.path}(current=${page.current-1})}">上一页</a></li>
+						<li th:class="|page-item ${i==page.current?'active':''}|" th:each="i:${#numbers.sequence(page.from,page.to)}">
+							<a class="page-link" th:href="@{${page.path}(current=${i})}" th:text="${i}">1</a>
+						</li>
+						<li th:class="|page-item ${page.current==page.total?'disabled':''}|">
+							<a class="page-link" th:href="@{${page.path}(current=${page.current+1})}">下一页</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" th:href="@{${page.path}(current=${page.total})}">末页</a>
+						</li>
 					</ul>
 				</nav>
 			</div>
