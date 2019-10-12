@@ -14,6 +14,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
+//import org.thymeleaf.TemplateEngine;
 //import org.thymeleaf.context.Context;
 
 import java.util.*;
@@ -28,6 +29,9 @@ public class UserService implements CommunityConstant {
     @Autowired
     private TemplateEngine templateEngine;
 
+    @Autowired
+    private RedisTemplate redisTemplate;
+
     @Value("${community.path.domain}")
     private String domain;
 
@@ -36,9 +40,6 @@ public class UserService implements CommunityConstant {
 
 //    @Autowired
 //    private LoginTicketMapper loginTicketMapper;
-
-    @Autowired
-    private RedisTemplate redisTemplate;
 
     public User findUserById(int id) {
 //        return userMapper.selectById(id);
@@ -195,7 +196,6 @@ public class UserService implements CommunityConstant {
 
         List<GrantedAuthority> list = new ArrayList<>();
         list.add(new GrantedAuthority() {
-
             @Override
             public String getAuthority() {
                 switch (user.getType()) {

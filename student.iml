@@ -2,7 +2,17 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" relativePaths="false" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/com/community/student/config/AlphaConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/community/student/config/KaptchaConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/community/student/config/QuartzConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/community/student/config/RedisConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/community/student/config/SecurityConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/community/student/StudentApplication.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/community/student/config/WebMvcConfig.java</file>
+        </fileset>
+      </configuration>
     </facet>
     <facet type="web" name="Web">
       <configuration>
@@ -994,7 +1004,6 @@
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:2.1.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-keyvalue:2.1.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-oxm:5.1.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context-support:5.1.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.lettuce:lettuce-core:5.1.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.39.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.39.Final" level="project" />
@@ -1066,5 +1075,9 @@
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.28" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-quartz:2.1.8.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context-support:5.1.9.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: com.mchange:mchange-commons-java:0.2.15" level="project" />
   </component>
 </module>
