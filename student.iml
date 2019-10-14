@@ -1079,5 +1079,9 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-context-support:5.1.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.3.1" level="project" />
     <orderEntry type="library" name="Maven: com.mchange:mchange-commons-java:0.2.15" level="project" />
+    <orderEntry type="library" name="Maven: com.qiniu:qiniu-java-sdk:7.2.23" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.11.0" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.14.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.5" level="project" />
   </component>
 </module>
