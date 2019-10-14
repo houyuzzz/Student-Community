@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.*;
 
+
 @Controller
 @RequestMapping("/discuss")
 public class DiscussPostController implements CommunityConstant {
