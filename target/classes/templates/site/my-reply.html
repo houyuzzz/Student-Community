@@ -63,16 +63,16 @@
 				<div class="position-relative">
 					<ul class="nav nav-tabs">
 						<li class="nav-item">
-							<a class="nav-link" href="profile.html">个人信息</a>
+							<a class="nav-link" th:href="@{|/user/profile/${loginUser.id}|}">个人信息</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="my-post.html">我的帖子</a>
+							<a class="nav-link active" th:href="@{|/user/profile/${loginUser.id}/post|}">我的帖子</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" href="my-reply.html">我的回复</a>
+							<a class="nav-link" th:href="@{|/user/profile/${loginUser.id}/reply|}">我的回复</a>
 						</li>
 					</ul>
-					<a href="profile.html" class="text-muted position-absolute rt-0">返回个人主页&gt;</a>
+					<a th:href="@{|/user/profile/${loginUser.id}|}" class="text-muted position-absolute rt-0">返回个人主页&gt;</a>
 				</div>
 				<!-- 我的回复 -->
 				<div class="mt-4">
