@@ -1,10 +1,11 @@
 package com.community.student.controller;
 
 import com.community.student.annotation.LoginRequired;
+import com.community.student.entity.Comment;
+import com.community.student.entity.DiscussPost;
+import com.community.student.entity.Page;
 import com.community.student.entity.User;
-import com.community.student.service.FollowService;
-import com.community.student.service.LikeService;
-import com.community.student.service.UserService;
+import com.community.student.service.*;
 import com.community.student.util.CommunityConstant;
 import com.community.student.util.CommunityUtil;
 import com.community.student.util.HostHolder;
@@ -28,6 +29,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
@@ -67,6 +72,12 @@ public class UserController implements CommunityConstant {
 
     @Autowired
     private FollowService followService;
+
+    @Autowired
+    private DiscussPostService discussPostService;
+
+    @Autowired
+    private CommentService commentService;
 
     @LoginRequired
     @RequestMapping(path = "/setting", method = RequestMethod.GET)
@@ -192,4 +203,67 @@ public class UserController implements CommunityConstant {
         return "/site/profile";
     }
 
+    // 我的帖子
+    @RequestMapping(path = "/profile/{userId}/post", method = RequestMethod.GET)
+    public String getProfilePostPage(@PathVariable("userId") int userId, Model model, Page page) {
+        User user = userService.findUserById(userId);
+        if (user == null) {
+            throw new RuntimeException("该用户不存在!");
+        }
+        int postCount=discussPostService.findDiscussPostRows(userId);
+        page.setRows(postCount);
+
+        page.setPath("/profile/" + userId + "/post");
+        List<DiscussPost> list = discussPostService.findDiscussPosts(userId, page.getOffset(), page.getLimit(), 0);
+        List<Map<String, Object>> discussPosts = new ArrayList<>();
+        if (list != null) {
+            for (DiscussPost post : list) {
+                Map<String, Object> map = new HashMap<>();
+                map.put("post", post);
+                user = userService.findUserById(post.getUserId());
+                map.put("user", user);
+                long likeCount = likeService.findEntityLikeCount(ENTITY_TYPE_POST, post.getId());
+                map.put("likeCount", likeCount);
+                discussPosts.add(map);
+            }
+        }
+        model.addAttribute("postCount", postCount);
+        model.addAttribute("userId", userId);
+        model.addAttribute("discussPosts", discussPosts);
+        return "/site/my-post";
+    }
+
+    // 我的回复
+    @RequestMapping(path = "/profile/{userId}/reply", method = RequestMethod.GET)
+    public String getProfileReplyPage(@PathVariable("userId") int userId, Model model, Page page) {
+        User user = userService.findUserById(userId);
+        if (user == null) {
+            throw new RuntimeException("该用户不存在!");
+        }
+
+        page.setPath("/profile/" + userId + "/reply");
+        // 我的回复数量
+        page.setRows(commentService.findCommentCount(userId));
+
+        List<Comment> commentList = commentService.findCommentsByUserId(userId, page.getOffset(), page.getLimit());
+        // 回复列表
+        List<Map<String, Object>> commentVoList = new ArrayList<>();
+        if (commentList != null) {
+            for (Comment comment : commentList) {
+                // 评论VO
+                Map<String, Object> commentVo = new HashMap<>();
+                // 评论
+                if (comment.getEntityType() == ENTITY_TYPE_POST) {
+                    commentVo.put("comment", comment);
+                    DiscussPost post = discussPostService.findDiscussPostById(comment.getEntityId());
+                    commentVo.put("post", post);
+                    commentVoList.add(commentVo);
+                }
+
+            }
+        }
+        model.addAttribute("comments", commentVoList);
+        model.addAttribute("commentCount", commentService.findCommentCount(userId));
+        return "/site/my-reply";
+    }
 }

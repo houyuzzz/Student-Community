@@ -36,7 +36,7 @@ public class HomeController implements CommunityConstant {
                                @RequestParam(name = "orderMode", defaultValue = "0") int orderMode) {
         // 方法调用钱,SpringMVC会自动实例化Model和Page,并将Page注入Model.
         // 所以,在thymeleaf中可以直接访问Page对象中的数据.
-        System.out.println(page);
+        //System.out.println(page);
         page.setRows(discussPostService.findDiscussPostRows(0));
         page.setPath("/index?orderMode=" + orderMode);
 
@@ -48,10 +48,8 @@ public class HomeController implements CommunityConstant {
                 map.put("post", post);
                 User user = userService.findUserById(post.getUserId());
                 map.put("user", user);
-
                 long likeCount = likeService.findEntityLikeCount(ENTITY_TYPE_POST, post.getId());
                 map.put("likeCount", likeCount);
-
                 discussPosts.add(map);
             }
         }
