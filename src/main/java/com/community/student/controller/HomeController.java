@@ -54,12 +54,7 @@ public class HomeController implements CommunityConstant {
             }
         }
         model.addAttribute("discussPosts", discussPosts);
-        /*
-        * post:一条帖子   user:用户信息  likeCount:点赞数量
-        * post....
-        *
-        *
-        * */
+
         return "/index";
     }
 

@@ -93,7 +93,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Comm
                         }
                     }
                 });
-
         // Security底层默认会拦截/logout请求,进行退出处理.
         // 覆盖它默认的逻辑,才能执行我们自己的退出代码.
         http.logout().logoutUrl("/securitylogout");

@@ -23,7 +23,6 @@ public class ExceptionAdvice {
         for (StackTraceElement element : e.getStackTrace()) {
             logger.error(element.toString());
         }
-
         String xRequestedWith = request.getHeader("x-requested-with");
         if ("XMLHttpRequest".equals(xRequestedWith)) {
             response.setContentType("application/plain;charset=utf-8");

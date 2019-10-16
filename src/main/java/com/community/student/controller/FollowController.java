@@ -83,10 +83,7 @@ public class FollowController implements CommunityConstant {
                 map.put("hasFollowed", hasFollowed(u.getId()));
             }
         }
-        /*
-        * hasFollowed:
-        *
-        * */
+
         model.addAttribute("users", userList);
 
         return "/site/followee";
@@ -109,10 +106,6 @@ public class FollowController implements CommunityConstant {
             for (Map<String, Object> map : userList) {
                 User u = (User) map.get("user");
                 map.put("hasFollowed", hasFollowed(u.getId()));
-            /*
-            hasFollwed:
-
-             */
             }
         }
         model.addAttribute("users", userList);

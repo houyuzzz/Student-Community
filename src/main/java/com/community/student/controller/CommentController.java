@@ -39,8 +39,8 @@ public class CommentController implements CommunityConstant {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    /*添加评论
-        帖子id  评论
+    /**
+     * 添加评论
      */
     @RequestMapping(path = "/add/{discussPostId}", method = RequestMethod.POST)
     public String addComment(@PathVariable("discussPostId") int discussPostId, Comment comment) {
@@ -65,7 +65,6 @@ public class CommentController implements CommunityConstant {
         }
         eventProducer.fireEvent(event);
         //重定向对应帖子
-
         if (comment.getEntityType() == ENTITY_TYPE_POST) {
             // 触发发帖事件
             event = new Event()

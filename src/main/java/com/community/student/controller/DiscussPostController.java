@@ -48,8 +48,8 @@ public class DiscussPostController implements CommunityConstant {
     private RedisTemplate redisTemplate;
 
 
-    /*发表帖子
-      题目 内容
+    /**
+     * 发表帖子
      */
     @RequestMapping(path = "/add", method = RequestMethod.POST)
     @ResponseBody
@@ -105,21 +105,17 @@ public class DiscussPostController implements CommunityConstant {
                 likeService.findEntityLikeStatus(hostHolder.getUser().getId(), ENTITY_TYPE_POST, discussPostId);
         model.addAttribute("likeStatus", likeStatus);
 
-
         // 评论分页信息
         page.setLimit(5);
         page.setPath("/discuss/detail/" + discussPostId);
         // 评论数量
         page.setRows(post.getCommentCount());
 
-
-
         // 评论: 给帖子的评论
         // 回复: 给评论的评论
         // 评论列表
         List<Comment> commentList = commentService.findCommentsByEntity(
                 ENTITY_TYPE_POST, post.getId(), page.getOffset(), page.getLimit());
-
         // 评论VO列表
         List<Map<String, Object>> commentVoList = new ArrayList<>();
         if (commentList != null) {
@@ -137,7 +133,6 @@ public class DiscussPostController implements CommunityConstant {
                 likeStatus = hostHolder.getUser() == null ? 0 :
                         likeService.findEntityLikeStatus(hostHolder.getUser().getId(), ENTITY_TYPE_COMMENT, comment.getId());
                 commentVo.put("likeStatus", likeStatus);
-
                 // 对于每一条评论进行循环
                 // 回复列表
                 List<Comment> replyList = commentService.findCommentsByEntity(
@@ -167,17 +162,13 @@ public class DiscussPostController implements CommunityConstant {
                 }
                 //增加进去
                 commentVo.put("replys", replyVoList);
-
                 // 回复数量
                 int replyCount = commentService.findCommentCount(ENTITY_TYPE_COMMENT, comment.getId());
                 commentVo.put("replyCount", replyCount);
-
                 commentVoList.add(commentVo);
             }
         }
-
         model.addAttribute("comments", commentVoList);
-
         return "/site/discuss-detail";
     }
 
@@ -186,7 +177,6 @@ public class DiscussPostController implements CommunityConstant {
     @ResponseBody
     public String setTop(int id) {
         discussPostService.updateType(id, 1);
-
         // 触发发帖事件
         Event event = new Event()
                 .setTopic(TOPIC_PUBLISH)
@@ -194,7 +184,6 @@ public class DiscussPostController implements CommunityConstant {
                 .setEntityType(ENTITY_TYPE_POST)
                 .setEntityId(id);
         eventProducer.fireEvent(event);
-
         return CommunityUtil.getJSONString(0);
     }
 
@@ -203,7 +192,6 @@ public class DiscussPostController implements CommunityConstant {
     @ResponseBody
     public String setWonderful(int id) {
         discussPostService.updateStatus(id, 1);
-
         // 触发发帖事件
         Event event = new Event()
                 .setTopic(TOPIC_PUBLISH)
@@ -211,7 +199,6 @@ public class DiscussPostController implements CommunityConstant {
                 .setEntityType(ENTITY_TYPE_POST)
                 .setEntityId(id);
         eventProducer.fireEvent(event);
-
         // 计算帖子分数
         String redisKey = RedisKeyUtil.getPostScoreKey();
         redisTemplate.opsForSet().add(redisKey, id);
@@ -224,7 +211,6 @@ public class DiscussPostController implements CommunityConstant {
     @ResponseBody
     public String setDelete(int id) {
         discussPostService.updateStatus(id, 2);
-
         // 触发删帖事件
         Event event = new Event()
                 .setTopic(TOPIC_DELETE)
@@ -232,9 +218,7 @@ public class DiscussPostController implements CommunityConstant {
                 .setEntityType(ENTITY_TYPE_POST)
                 .setEntityId(id);
         eventProducer.fireEvent(event);
-
         return CommunityUtil.getJSONString(0);
     }
-
 
 }
