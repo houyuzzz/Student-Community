@@ -19,7 +19,6 @@ public class QuartzConfig {
     // 2.将FactoryBean装配到Spring容器里.
     // 3.将FactoryBean注入给其他的Bean.
     // 4.该Bean得到的是FactoryBean所管理的对象实例.
-
     // 刷新帖子分数任务
     @Bean
     public JobDetailFactoryBean postScoreRefreshJobDetail() {
