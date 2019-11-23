@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="https://static.nowcoder.com/images/logo_87_87.png"/>
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
 	<link rel="stylesheet" th:href="@{/css/global.css}" />
 	<title>个人主页</title>
@@ -63,13 +63,13 @@
 				<div class="position-relative">
 					<ul class="nav nav-tabs">
 						<li class="nav-item">
-							<a class="nav-link active" th:href="@{|/user/profile/${loginUser.id}|}">个人信息</a>
+							<a class="nav-link active" th:href="@{|/user/profile/${user.id}|}">个人信息</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" th:href="@{|/user/profile/${loginUser.id}/post|}">我的帖子</a>
+							<a class="nav-link" th:href="@{|/user/profile/${user.id}/post|}" th:if="${loginUser!=null&&loginUser.id==user.id}">我的帖子</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" th:href="@{|/user/profile/${loginUser.id}/reply|}">我的回复</a>
+							<a class="nav-link" th:href="@{|/user/profile/${user.id}/reply|}" th:if="${loginUser!=null&&loginUser.id==user.id}">我的回复</a>
 						</li>
 					</ul>
 				</div>

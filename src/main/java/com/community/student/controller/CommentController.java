@@ -7,6 +7,7 @@ import com.community.student.event.EventProducer;
 import com.community.student.service.CommentService;
 import com.community.student.service.DiscussPostService;
 import com.community.student.util.CommunityConstant;
+import com.community.student.util.CommunityUtil;
 import com.community.student.util.HostHolder;
 import com.community.student.util.RedisKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Date;
 
@@ -79,6 +81,16 @@ public class CommentController implements CommunityConstant {
             redisTemplate.opsForSet().add(redisKey, discussPostId);
         }
         return "redirect:/discuss/detail/" + discussPostId;
+    }
+
+    /**
+     * 删除
+     */
+    @RequestMapping(path = "/delete", method = RequestMethod.POST)
+    @ResponseBody
+    public String deleteComment(int id) {
+        commentService.deleteComment(id);
+        return CommunityUtil.getJSONString(0, "删除成功!");
     }
 
 }

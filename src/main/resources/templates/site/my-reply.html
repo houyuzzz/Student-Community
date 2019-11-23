@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="https://static.nowcoder.com/images/logo_87_87.png"/>
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
 	<link rel="stylesheet" th:href="@{/css/global.css}" />
 	<title>个人主页</title>
@@ -66,18 +66,22 @@
 							<a class="nav-link" th:href="@{|/user/profile/${loginUser.id}|}">个人信息</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" th:href="@{|/user/profile/${loginUser.id}/post|}">我的帖子</a>
+							<a class="nav-link " th:href="@{|/user/profile/${loginUser.id}/post|}">我的帖子</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" th:href="@{|/user/profile/${loginUser.id}/reply|}">我的回复</a>
+							<a class="nav-link active" th:href="@{|/user/profile/${loginUser.id}/reply|}">我的回复</a>
 						</li>
 					</ul>
 					<a th:href="@{|/user/profile/${loginUser.id}|}" class="text-muted position-absolute rt-0">返回个人主页&gt;</a>
 				</div>
 				<!-- 我的回复 -->
 				<div class="mt-4">
-					<h6><b class="square"></b><span>回复的帖子：</span><b th:text="@{${commentCount}}"></b></h6>
+					<h6><b class="square"></b> 回复的帖子(<span th:text="@{${commentCount}}">93</span>)</h6>
 					<ul class="list-unstyled mt-4 pl-3 pr-3" th:each="cvo:${comments}">
+
+						<div class="float-right">
+							<button type="button" class="btn btn-danger btn-sm" id="deleteComment" th:onclick="|setDelete2(${cvo.comment.id});|">删除</button>
+						</div>
 						<li class="border-bottom pb-3 mt-4">
 							<div class="font-size-16 text-info">
 								<a th:href="@{|/discuss/detail/${cvo.post.id}|}" th:utext="${cvo.post.title}">备战春招，面试刷题跟他复习，一个月全搞定！</a>
@@ -176,6 +180,6 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-	<script src="../js/global.js"></script>
+	<script th:src="@{/js/global.js}"></script>
 </body>
 </html>

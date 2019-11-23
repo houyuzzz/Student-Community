@@ -32,3 +32,35 @@ window.alert = function(message) {
 	$(".alert-box .modal-body p").text(message);
 	$(".alert-box").modal("show");
 }
+
+// 删除
+function setDelete(id) {
+	$.post(
+		CONTEXT_PATH + "/discuss/delete2",
+		{"id":id},
+		function(data) {
+			data = $.parseJSON(data);
+			if(data.code == 0) {
+				location.reload();
+			} else {
+				alert(data.msg);
+			}
+		}
+	);
+}
+
+// 删除
+function setDelete2(id) {
+	$.post(
+		CONTEXT_PATH + "/comment/delete",
+		{"id":id},
+		function(data) {
+			data = $.parseJSON(data);
+			if(data.code == 0) {
+				location.reload();
+			} else {
+				alert(data.msg);
+			}
+		}
+	);
+}

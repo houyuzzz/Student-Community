@@ -221,4 +221,19 @@ public class DiscussPostController implements CommunityConstant {
         return CommunityUtil.getJSONString(0);
     }
 
+    // 删除
+    @RequestMapping(path = "/delete2", method = RequestMethod.POST)
+    @ResponseBody
+    public String setDelete2(int id) {
+        discussPostService.updateStatus(id, 2);
+        // 触发删帖事件
+        Event event = new Event()
+                .setTopic(TOPIC_DELETE)
+                .setUserId(hostHolder.getUser().getId())
+                .setEntityType(ENTITY_TYPE_POST)
+                .setEntityId(id);
+        eventProducer.fireEvent(event);
+        return CommunityUtil.getJSONString(0);
+    }
+
 }

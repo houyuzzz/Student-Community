@@ -81,11 +81,15 @@ public class ElasticsearchTests {
     @Test
     public void testSearchByRepository() {
         SearchQuery searchQuery = new NativeSearchQueryBuilder()
+                //搜素条件
                 .withQuery(QueryBuilders.multiMatchQuery("互联网寒冬", "title", "content"))
+                //排序
                 .withSort(SortBuilders.fieldSort("type").order(SortOrder.DESC))
                 .withSort(SortBuilders.fieldSort("score").order(SortOrder.DESC))
                 .withSort(SortBuilders.fieldSort("createTime").order(SortOrder.DESC))
+                //分页
                 .withPageable(PageRequest.of(0, 10))
+                //高亮
                 .withHighlightFields(
                         new HighlightBuilder.Field("title").preTags("<em>").postTags("</em>"),
                         new HighlightBuilder.Field("content").preTags("<em>").postTags("</em>")

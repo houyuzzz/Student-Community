@@ -111,7 +111,7 @@ public class UserController implements CommunityConstant {
         return CommunityUtil.getJSONString(0);
     }
 
-    //废弃
+
     //上传文件
     @LoginRequired
     @RequestMapping(path = "/upload", method = RequestMethod.POST)
@@ -149,7 +149,7 @@ public class UserController implements CommunityConstant {
         return "redirect:/index";
     }
 
-    //废弃
+
     //获得头像
     @RequestMapping(path = "/header/{fileName}", method = RequestMethod.GET)
     public void getHeader(@PathVariable("fileName") String fileName, HttpServletResponse response) {
@@ -209,6 +209,9 @@ public class UserController implements CommunityConstant {
         if (user == null) {
             throw new RuntimeException("该用户不存在!");
         }
+        if(hostHolder.getUser()==null||userId!=hostHolder.getUser().getId()){
+            return "redirect:/index";
+        }
         int postCount=discussPostService.findDiscussPostRows(userId);
         page.setRows(postCount);
 
@@ -240,6 +243,10 @@ public class UserController implements CommunityConstant {
             throw new RuntimeException("该用户不存在!");
         }
 
+        if(hostHolder.getUser()==null||userId!=hostHolder.getUser().getId()){
+            return "redirect:/index";
+        }
+
         page.setPath("/profile/" + userId + "/reply");
         // 我的回复数量
         page.setRows(commentService.findCommentCount(userId));
@@ -252,7 +259,7 @@ public class UserController implements CommunityConstant {
                 // 评论VO
                 Map<String, Object> commentVo = new HashMap<>();
                 // 评论
-                if (comment.getEntityType() == ENTITY_TYPE_POST) {
+                if (comment.getEntityType() == ENTITY_TYPE_POST && !comment.getContent().equals("评论已经删除")) {
                     commentVo.put("comment", comment);
                     DiscussPost post = discussPostService.findDiscussPostById(comment.getEntityId());
                     commentVo.put("post", post);
