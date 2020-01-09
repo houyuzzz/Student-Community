@@ -1,4 +1,4 @@
-var CONTEXT_PATH = "/community";
+var CONTEXT_PATH = "";
 
 window.alert = function(message) {
 	if(!$(".alert-box").length) {
@@ -32,6 +32,8 @@ window.alert = function(message) {
 	$(".alert-box .modal-body p").text(message);
 	$(".alert-box").modal("show");
 }
+
+
 
 // 删除
 function setDelete(id) {

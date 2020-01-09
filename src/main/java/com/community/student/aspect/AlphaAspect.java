@@ -3,9 +3,6 @@ package com.community.student.aspect;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
-
-//@Component
-//@Aspect
 public class AlphaAspect {
 
     @Pointcut("execution(* com.community.student.service.*.*(..))")

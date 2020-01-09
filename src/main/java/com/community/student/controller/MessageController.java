@@ -68,17 +68,10 @@ public class MessageController implements CommunityConstant {
 
     @RequestMapping(path = "/letter/detail/{conversationId}", method = RequestMethod.GET)
     public String getLetterDetail(@PathVariable("conversationId") String conversationId, Page page, Model model) {
-        String[] ids = conversationId.split("_");
-        int id0 = Integer.parseInt(ids[0]);
-        int id1 = Integer.parseInt(ids[1]);
-        if (hostHolder.getUser() == null || (id0 != hostHolder.getUser().getId() && id1 != hostHolder.getUser().getId())) {
-            return "redirect:/index";
-        }
         // 分页信息
         page.setLimit(5);
         page.setPath("/letter/detail/" + conversationId);
         page.setRows(messageService.findLetterCount(conversationId));
-
 
         // 私信列表
         List<Message> letterList = messageService.findLetters(conversationId, page.getOffset(), page.getLimit());
