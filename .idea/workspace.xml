@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a8b08d8-177a-498a-9e2e-ceeb255a2fc4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_10_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_10_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -253,6 +253,13 @@
       <workItem from="1580721640872" duration="128000" />
       <workItem from="1580733440492" duration="30000" />
       <workItem from="1580803012178" duration="449000" />
+      <workItem from="1580943435071" duration="177000" />
+      <workItem from="1580974835905" duration="695000" />
+      <workItem from="1580979911688" duration="631000" />
+      <workItem from="1580985990474" duration="1152000" />
+      <workItem from="1580992588000" duration="5000" />
+      <workItem from="1581162598502" duration="201000" />
+      <workItem from="1581164820403" duration="120000" />
     </task>
     <task id="LOCAL-00001" summary="hh">
       <created>1570621469800</created>

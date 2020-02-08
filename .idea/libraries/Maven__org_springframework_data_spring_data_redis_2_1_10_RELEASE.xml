@@ -8,6 +8,7 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.10.RELEASE/spring-data-redis-2.1.10.RELEASE-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/spring-data-redis-2.1.10.RELEASE-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
