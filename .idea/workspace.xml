@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3a8b08d8-177a-498a-9e2e-ceeb255a2fc4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/service/AlphaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/service/AlphaService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +43,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1XHzHbaMz8FuvTQNKHKZiDkQMbi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -271,6 +271,7 @@
       <workItem from="1581770081866" duration="12581000" />
       <workItem from="1581911186773" duration="1991000" />
       <workItem from="1581919004069" duration="1614000" />
+      <workItem from="1581940797915" duration="631000" />
     </task>
     <task id="LOCAL-00001" summary="hh">
       <created>1570621469800</created>
