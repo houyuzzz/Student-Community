@@ -9,9 +9,7 @@ import com.community.student.util.CommunityUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
@@ -30,7 +28,6 @@ import java.util.Date;
 public class AlphaService {
 
     private static final Logger logger = LoggerFactory.getLogger(AlphaService.class);
-
 
     @Autowired
     private UserMapper userMapper;

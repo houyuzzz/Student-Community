@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a8b08d8-177a-498a-9e2e-ceeb255a2fc4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_10_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_10_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/service/AlphaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/service/AlphaService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -260,6 +260,17 @@
       <workItem from="1580992588000" duration="5000" />
       <workItem from="1581162598502" duration="201000" />
       <workItem from="1581164820403" duration="120000" />
+      <workItem from="1581329745476" duration="3087000" />
+      <workItem from="1581425687217" duration="295000" />
+      <workItem from="1581474875443" duration="1384000" />
+      <workItem from="1581489807965" duration="287000" />
+      <workItem from="1581670107129" duration="921000" />
+      <workItem from="1581689570871" duration="653000" />
+      <workItem from="1581738592278" duration="168000" />
+      <workItem from="1581748866642" duration="597000" />
+      <workItem from="1581770081866" duration="12581000" />
+      <workItem from="1581911186773" duration="1991000" />
+      <workItem from="1581919004069" duration="1614000" />
     </task>
     <task id="LOCAL-00001" summary="hh">
       <created>1570621469800</created>
