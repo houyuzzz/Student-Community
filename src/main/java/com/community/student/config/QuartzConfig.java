@@ -2,7 +2,9 @@ package com.community.student.config;
 
 
 
+import com.community.student.entity.User;
 import com.community.student.quartz.PostScoreRefreshJob;
+import com.community.student.quartz.UserScoreRefreshJob;
 import org.quartz.JobDataMap;
 import org.quartz.JobDetail;
 import org.springframework.context.annotation.Bean;
@@ -36,6 +38,29 @@ public class QuartzConfig {
         SimpleTriggerFactoryBean factoryBean = new SimpleTriggerFactoryBean();
         factoryBean.setJobDetail(postScoreRefreshJobDetail);
         factoryBean.setName("postScoreRefreshTrigger");
+        factoryBean.setGroup("communityTriggerGroup");
+        //5分钟
+        factoryBean.setRepeatInterval(1000 * 60 * 5);
+        factoryBean.setJobDataMap(new JobDataMap());
+        return factoryBean;
+    }
+
+    @Bean
+    public JobDetailFactoryBean userScoreRefreshJobDetail() {
+        JobDetailFactoryBean factoryBean = new JobDetailFactoryBean();
+        factoryBean.setJobClass(UserScoreRefreshJob.class);
+        factoryBean.setName("userScoreRefreshJob");
+        factoryBean.setGroup("communityJobGroup");
+        factoryBean.setDurability(true);
+        factoryBean.setRequestsRecovery(true);
+        return factoryBean;
+    }
+
+    @Bean
+    public SimpleTriggerFactoryBean userScoreRefreshTrigger(JobDetail userScoreRefreshJobDetail) {
+        SimpleTriggerFactoryBean factoryBean = new SimpleTriggerFactoryBean();
+        factoryBean.setJobDetail(userScoreRefreshJobDetail);
+        factoryBean.setName("userScoreRefreshTrigger");
         factoryBean.setGroup("communityTriggerGroup");
         //5分钟
         factoryBean.setRepeatInterval(1000 * 60 * 5);

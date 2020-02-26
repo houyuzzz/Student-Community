@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a8b08d8-177a-498a-9e2e-ceeb255a2fc4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/community/student/quartz/UserScoreRefreshJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/site/admin/studentdata.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/config/QuartzConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/config/QuartzConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/controller/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/util/RedisKeyUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/util/RedisKeyUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/user-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/user-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/user-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/user-mapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +47,7 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -45,6 +58,7 @@
   <component name="ProjectId" id="1XHzHbaMz8FuvTQNKHKZiDkQMbi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -67,20 +81,20 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\项目\student\student\Student-Community\src\main\resources" />
-      <recent name="D:\项目\student\student\src\main\resources" />
-      <recent name="D:\项目\student\student\src\test\java\com\community\student" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.community.student" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\项目\student\student\Student-Community\src\main\resources" />
       <recent name="D:\项目\student\student\Student-Community\src\main\resources\templates" />
       <recent name="D:\项目\student\student\Student-Community\src\main\resources\static\img" />
       <recent name="D:\项目\student\student\Student-Community\src\main\java\com\community\student" />
       <recent name="D:\项目\student\student\Student-Community\src\test\java\com\community\student" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.community.student" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\项目\student\student\Student-Community\src\main\resources" />
+      <recent name="D:\项目\student\student\src\main\resources" />
+      <recent name="D:\项目\student\student\src\test\java\com\community\student" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -272,6 +286,26 @@
       <workItem from="1581911186773" duration="1991000" />
       <workItem from="1581919004069" duration="1614000" />
       <workItem from="1581940797915" duration="631000" />
+      <workItem from="1581943420155" duration="650000" />
+      <workItem from="1581947649209" duration="1699000" />
+      <workItem from="1582005113762" duration="11874000" />
+      <workItem from="1582028782152" duration="20000" />
+      <workItem from="1582086474375" duration="1228000" />
+      <workItem from="1582090162088" duration="1894000" />
+      <workItem from="1582165791375" duration="4014000" />
+      <workItem from="1582187559355" duration="720000" />
+      <workItem from="1582197536359" duration="116000" />
+      <workItem from="1582258245430" duration="191000" />
+      <workItem from="1582272335410" duration="559000" />
+      <workItem from="1582276657965" duration="707000" />
+      <workItem from="1582286695200" duration="15000" />
+      <workItem from="1582354955345" duration="7645000" />
+      <workItem from="1582507462441" duration="12791000" />
+      <workItem from="1582521641368" duration="92000" />
+      <workItem from="1582524623772" duration="92000" />
+      <workItem from="1582606170196" duration="295000" />
+      <workItem from="1582607307853" duration="21000" />
+      <workItem from="1582700667880" duration="2119000" />
     </task>
     <task id="LOCAL-00001" summary="hh">
       <created>1570621469800</created>

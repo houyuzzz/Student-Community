@@ -50,6 +50,16 @@ public class UserService implements CommunityConstant {
         return user;
     }
 
+    public List<User> findAllUser(int offerset, int limit) {
+        List<User> users = userMapper.selectAll(offerset, limit);
+        return users;
+    }
+
+    public int findAllUserCount() {
+        int result = userMapper.selectAllRows();
+        return result;
+    }
+
     public Map<String, Object> register(User user) {
         Map<String, Object> map = new HashMap<>();
 
@@ -90,6 +100,7 @@ public class UserService implements CommunityConstant {
         user.setType(0);
         //user.setStatus(0);
         user.setStatus(1);
+        user.setScore(0);
         user.setActivationCode(CommunityUtil.generateUUID());
         user.setHeaderUrl(String.format("http://images.nowcoder.com/head/%dt.png", new Random().nextInt(1000)));
         user.setCreateTime(new Date());
@@ -98,7 +109,6 @@ public class UserService implements CommunityConstant {
 
         return map;
     }
-
 
 
     public Map<String, Object> login(String username, String password, int expiredSeconds) {
@@ -165,6 +175,11 @@ public class UserService implements CommunityConstant {
         //清除缓存
         clearCache(userId);
         return rows;
+    }
+
+    public int updateScore(int userId, int score) {
+        int result = userMapper.updateScore(userId, score);
+        return result;
     }
 
     public User findUserByName(String username) {

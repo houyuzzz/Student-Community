@@ -5,11 +5,11 @@
 <mapper namespace="com.community.student.dao.UserMapper">
 
     <sql id="insertFields">
-        username, password, salt, email, type, status, activation_code, header_url, create_time
+        username, password, salt, email, type, status, activation_code, header_url, create_time,score
     </sql>
 
     <sql id="selectFields">
-        id, username, password, salt, email, type, status, activation_code, header_url, create_time
+        id, username, password, salt, email, type, status, activation_code, header_url, create_time,score
     </sql>
 
     <select id="selectById" resultType="User">
@@ -30,6 +30,18 @@
         where email = #{email}
     </select>
 
+    <select id="selectAll" resultType="User">
+        select <include refid="selectFields"></include>
+        from user
+        order by score desc
+        limit #{offset}, #{limit}
+    </select>
+
+    <select id="selectAllRows" resultType="int">
+        select count(id)
+        from user
+    </select>
+
     <insert id="insertUser" parameterType="User" keyProperty="id">
         insert into user (<include refid="insertFields"></include>)
         values(#{username}, #{password}, #{salt}, #{email}, #{type}, #{status}, #{activationCode}, #{headerUrl}, #{createTime})
@@ -45,6 +57,10 @@
 
     <update id="updatePassword">
         update user set password = #{password} where id = #{id}
+    </update>
+
+    <update id="updateScore">
+        update user set score = #{score} where id = #{id}
     </update>
 
 </mapper>

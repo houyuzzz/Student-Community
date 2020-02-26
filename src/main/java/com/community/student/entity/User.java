@@ -14,6 +14,7 @@ public class User {
     private String activationCode;
     private String headerUrl;
     private Date createTime;
+    private int score;
 
     public int getId() {
         return id;
@@ -95,6 +96,14 @@ public class User {
         this.createTime = createTime;
     }
 
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -108,6 +117,7 @@ public class User {
                 ", activationCode='" + activationCode + '\'' +
                 ", headerUrl='" + headerUrl + '\'' +
                 ", createTime=" + createTime +
+                ", score" + score +
                 '}';
     }
 

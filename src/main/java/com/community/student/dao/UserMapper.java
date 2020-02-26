@@ -3,6 +3,8 @@ package com.community.student.dao;
 import com.community.student.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface UserMapper {
 
@@ -19,5 +21,11 @@ public interface UserMapper {
     int updateHeader(int id, String headerUrl);
 
     int updatePassword(int id, String password);
+
+    int updateScore(int id, int score);
+
+    int selectAllRows();
+
+    List<User> selectAll(int offset, int limit);
 
 }
