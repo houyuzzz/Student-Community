@@ -1,8 +1,5 @@
 package com.community.student.config;
 
-
-
-import com.community.student.entity.User;
 import com.community.student.quartz.PostScoreRefreshJob;
 import com.community.student.quartz.UserScoreRefreshJob;
 import org.quartz.JobDataMap;

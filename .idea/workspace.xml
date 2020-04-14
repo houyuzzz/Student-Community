@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a8b08d8-177a-498a-9e2e-ceeb255a2fc4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/community/student/quartz/UserScoreRefreshJob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/site/admin/studentdata.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/community/student/controller/NoticeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/community/student/dao/SchoolNoticeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/community/student/entity/SchoolFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/community/student/service/FileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/schoolfile-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/site/schoolnotice.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/config/QuartzConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/config/QuartzConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/controller/DataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/util/RedisKeyUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/util/RedisKeyUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/user-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/user-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/user-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/user-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,9 +43,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -81,20 +78,20 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\项目\student\student\Student-Community\src\main\resources" />
+      <recent name="D:\项目\student\student\src\main\resources" />
+      <recent name="D:\项目\student\student\src\test\java\com\community\student" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.community.student" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\项目\student\student\Student-Community\src\main\resources" />
       <recent name="D:\项目\student\student\Student-Community\src\main\resources\templates" />
       <recent name="D:\项目\student\student\Student-Community\src\main\resources\static\img" />
       <recent name="D:\项目\student\student\Student-Community\src\main\java\com\community\student" />
       <recent name="D:\项目\student\student\Student-Community\src\test\java\com\community\student" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.community.student" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\项目\student\student\Student-Community\src\main\resources" />
-      <recent name="D:\项目\student\student\src\main\resources" />
-      <recent name="D:\项目\student\student\src\test\java\com\community\student" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -119,22 +116,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ElasticsearchTests.testInsertList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="student" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.community.student.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.community.student" />
-      <option name="MAIN_CLASS_NAME" value="com.community.student.ElasticsearchTests" />
-      <option name="METHOD_NAME" value="testInsertList" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -171,6 +152,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RedisTests.testSortedSets" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="student" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.community.student.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.community.student" />
+      <option name="MAIN_CLASS_NAME" value="com.community.student.RedisTests" />
+      <option name="METHOD_NAME" value="testSortedSets" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SensitiveTests.testSensitiveFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="student" />
       <extension name="coverage">
@@ -196,11 +193,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RedisTests.testSortedSets" />
         <item itemvalue="Application.WkTests" />
         <item itemvalue="JUnit.MapperTests.testSelectUser" />
         <item itemvalue="JUnit.SensitiveTests.testSensitiveFilter" />
         <item itemvalue="JUnit.RedisTests.testBitMapOperation" />
-        <item itemvalue="JUnit.ElasticsearchTests.testInsertList" />
       </list>
     </recent_temporary>
   </component>
@@ -306,6 +303,31 @@
       <workItem from="1582606170196" duration="295000" />
       <workItem from="1582607307853" duration="21000" />
       <workItem from="1582700667880" duration="2119000" />
+      <workItem from="1582715615044" duration="15000" />
+      <workItem from="1582779546401" duration="1217000" />
+      <workItem from="1582800791839" duration="14000" />
+      <workItem from="1582873734247" duration="4435000" />
+      <workItem from="1583139611936" duration="4500000" />
+      <workItem from="1583232606183" duration="1691000" />
+      <workItem from="1583284542091" duration="4367000" />
+      <workItem from="1583295319660" duration="26000" />
+      <workItem from="1583476271642" duration="1924000" />
+      <workItem from="1583596152514" duration="1772000" />
+      <workItem from="1583736212735" duration="681000" />
+      <workItem from="1583737214174" duration="26000" />
+      <workItem from="1583983795843" duration="1518000" />
+      <workItem from="1583992623958" duration="12000" />
+      <workItem from="1584067381026" duration="1318000" />
+      <workItem from="1584177880333" duration="780000" />
+      <workItem from="1584318863559" duration="99000" />
+      <workItem from="1584516125443" duration="3868000" />
+      <workItem from="1584683572057" duration="1536000" />
+      <workItem from="1584690616770" duration="1502000" />
+      <workItem from="1584792708182" duration="1704000" />
+      <workItem from="1584841309621" duration="1283000" />
+      <workItem from="1585914226519" duration="90000" />
+      <workItem from="1586749703432" duration="21336000" />
+      <workItem from="1586834212962" duration="7959000" />
     </task>
     <task id="LOCAL-00001" summary="hh">
       <created>1570621469800</created>
@@ -316,15 +338,6 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TodoView" selected-index="2">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
