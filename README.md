@@ -1,6 +1,9 @@
 # student-community
 牛客社区平台，根据牛客网课程改编成学生社区平台
 
+## 项目架构图
+ ![image](https://github.com/houyuzzz/student-community/blob/master/student-community.png)
+
 ## 功能具体说明
 ### 1.登录与注册
 登录与注册比较常规，比较注意的是验证码，当进入登录界面，前端通过get请求获得这一次验证码的信息，别添加验证的cookie让浏览器携带好区分这是这一个人输入的验证码（设置过期时间redis和浏览器都要）。登录后会给浏览器cookie中的一个ticket，浏览器每次都带着ticket来请求，服务端获取去和redis中的比对，成功就使用threadlocal去持有这个用户的信息。返回页面结束后就移除这个用户的信息。
