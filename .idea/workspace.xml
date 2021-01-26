@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a8b08d8-177a-498a-9e2e-ceeb255a2fc4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/student/controller/LikeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/student/controller/LikeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/.idea/img.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/.idea/img.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/site/schoolnotice.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/site/schoolnotice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-produce.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-produce.properties" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +46,10 @@
   </component>
   <component name="ProjectId" id="1XHzHbaMz8FuvTQNKHKZiDkQMbi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
@@ -66,7 +59,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../leetcode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -96,18 +89,6 @@
       <recent name="D:\项目\student\student\Student-Community\src\main\java\com\community\student" />
       <recent name="D:\项目\student\student\Student-Community\src\test\java\com\community\student" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.StudentApplication">
     <configuration name="WkTests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -347,6 +328,7 @@
       <workItem from="1589637744499" duration="1257000" />
       <workItem from="1589677661002" duration="4163000" />
       <workItem from="1589696510045" duration="32000" />
+      <workItem from="1611651675843" duration="185000" />
     </task>
     <task id="LOCAL-00001" summary="hh">
       <created>1570621469800</created>
@@ -359,20 +341,19 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
